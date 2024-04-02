@@ -29,6 +29,12 @@ loops.everyInterval(0 * 0, function () {
 
 ## Étape 3
 
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
+
 Modifie le bloc ``||math: 0   x   0||``.
 
 Remplace la valeur ``||math: 0||`` de gauche par ``||math: 1000||``.
@@ -45,6 +51,12 @@ loops.everyInterval(1000 * (0 * 0), function () {
 
 ## Étape 4
 
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
+
 Modifie le nouveau bloc ``||math: 0   x   0||``.
 
 Remplace la valeur ``||math: 0||`` du centre par ``||math: 60||``.
@@ -60,6 +72,12 @@ loops.everyInterval(1000 * (60 * 5), function () {
 ```
 
 ## Étape 5
+
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
 
 Ajoute le bloc ``||datalogger: log data||`` (trad. : enregistrer des données) dans le bloc ``||loops: chaque (ms)||``.
 
@@ -79,6 +97,12 @@ loops.everyInterval(1000 * (60 * 5), function () {
 
 ## Étape 6
 
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
+
 Renomme les 2 colonnes du tableau par les valeurs ``||datalogger: T||`` (pour Celsius) et ``||datalogger: L||`` (pour luminosité).
 
 ```blocks
@@ -93,6 +117,12 @@ loops.everyInterval(1000, function () {
 ```
 
 ## Étape 7
+
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
 
 Remplace la valeur ``||datalogger: 0||`` de la colonne ``||datalogger: T||`` par le bloc ``||input: température||``.
 
@@ -112,6 +142,12 @@ loops.everyInterval(1000 * (60 * 5), function () {
 
 ## Étape 8
 
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
+
 Glisse le bloc ``||input: lorsque le bouton A+B est pressé)||`` dans la zone de programme.
 
 Ajoute le bloc ``||datalogger: delete log||`` (trad. : effacer les données) dans le bloc ``||input: lorsque le bouton A+B est pressé)||``.
@@ -127,6 +163,12 @@ input.onButtonPressed(Button.AB, function () {
 
 ## Étape 9
 
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
+
 Modifie le bloc ``||datalogger: delete log||`` (trad. : effacer les données).
 
 Remplace la valeur ``||datalogger: fast||`` (trad. : rapide) par la valeur ``||datalogger: plein||`` (trad. : au complet).
@@ -140,6 +182,12 @@ input.onButtonPressed(Button.AB, function () {
 ```
 
 ## Étape 10
+
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
 
 Ajoute le bloc ``||basic: pause (ms)||`` sous le bloc  ``||datalogger: delete log||`` (trad. : effacer les données).
 
@@ -156,6 +204,12 @@ input.onButtonPressed(Button.AB, function () {
 
 ## Étape 11
 
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
+
 Ajoute le bloc ``||control: remise à zero||`` sous le bloc  ``||basic: pause (ms)||``.
 
 
@@ -170,6 +224,12 @@ input.onButtonPressed(Button.AB, function () {
 ```
 
 ## Étape 12
+
+```package
+
+datalogger=github:Microsoft/pxt-microbit
+
+```
 
 Voici la programmation complète du tutoriel.
 
