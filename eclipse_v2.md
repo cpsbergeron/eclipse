@@ -192,6 +192,6 @@ loops.everyInterval(1000 * (60 * 5), function () {
 
 ```
 
-## @showdialog
+## Étape 13
 
 Télécharge la programmation dans le micro:bit et teste la programmation.
