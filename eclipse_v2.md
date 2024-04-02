@@ -12,7 +12,7 @@ Supprime les blocs ``||basic:toujours||`` et ``||basic:au démarrage||``.
 
 ```package
 
-datalogger=github:microsoft/pxt-microbit
+datalogger=github:pxt-microbit
 
 ```
 
