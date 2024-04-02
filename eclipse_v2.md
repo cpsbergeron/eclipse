@@ -56,11 +56,6 @@ loops.everyInterval(1000 * (60 * 5), function () {
 
 ## Étape 5
 
-```package
-
-datalogger=github:microsoft/pxt-microbit
-
-```
 
 Ajoute le bloc ``||datalogger: log data||`` (trad. : enregistrer des données) dans le bloc ``||loops: chaque (ms)||``.
 
