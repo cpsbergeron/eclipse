@@ -12,7 +12,7 @@ Supprime les blocs ``||basic:toujours||`` et ``||basic:au démarrage||``.
 
 ```package
 
-datalogger=github:pxt-microbit
+datalogger=github:microsoft/pxt-microbit
 
 ```
 
@@ -49,7 +49,7 @@ Modifie le nouveau bloc ``||math: 0   x   0||``.
 
 Remplace la valeur ``||math: 0||`` du centre par ``||math: 60||``.
 
-Remplace la valeur ``||math: 0||`` de droite par par ``||math: 5||``.
+Remplace la valeur ``||math: 0||`` de droite par par ``||math: 2||``.
 
 ```blocks
 
@@ -67,7 +67,7 @@ Appuie sur ``||datalogger: +||`` pour ajouter une 2e colonne.
 
 ```blocks
 
-loops.everyInterval(1000 * (60 * 5), function () {
+loops.everyInterval(1000 * (60 * 2), function () {
     datalogger.log(
     datalogger.createCV("", 0),
     datalogger.createCV("", 0)
@@ -82,7 +82,7 @@ Renomme les 2 colonnes du tableau par les valeurs ``||datalogger: T||`` (pour Ce
 
 ```blocks
 
-loops.everyInterval(1000, function () {
+loops.everyInterval(1000 * (60 * 2), function () {
     datalogger.log(
     datalogger.createCV("T", 0),
     datalogger.createCV("L", 0)
@@ -99,7 +99,7 @@ Remplace la valeur ``||datalogger: 0||`` de la colonne ``||datalogger: L||`` par
 
 ```blocks
 
-loops.everyInterval(1000 * (60 * 5), function () {
+loops.everyInterval(1000 * (60 * 2), function () {
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
     datalogger.createCV("L", input.lightLevel())
@@ -125,6 +125,8 @@ input.onButtonPressed(Button.AB, function () {
 ## Étape 9
 
 Modifie le bloc ``||datalogger: delete log||`` (trad. : effacer les données).
+
+Appuie sur le ``||datalogger: +||`` pour afficher plus d'options.
 
 Remplace la valeur ``||datalogger: fast||`` (trad. : rapide) par la valeur ``||datalogger: plein||`` (trad. : au complet).
 
