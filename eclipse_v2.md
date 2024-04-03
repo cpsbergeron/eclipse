@@ -112,7 +112,7 @@ loops.everyInterval(1000 * (60 * 2), function () {
 
 Glisse le bloc ``||input: lorsque le bouton A+B est pressé)||`` dans la zone de programme.
 
-Ajoute le bloc ``||datalogger: delete log||`` (trad. : effacer les données) dans le bloc ``||input: lorsque le bouton A+B est pressé)||``.
+Ajoute le bloc ``||datalogger: delete log||`` (trad. : effacer le journal de données) dans le bloc ``||input: lorsque le bouton A+B est pressé)||``.
 
 ```blocks
 
@@ -124,7 +124,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ## Étape 9
 
-Modifie le bloc ``||datalogger: delete log||`` (trad. : effacer les données).
+Modifie le bloc ``||datalogger: delete log||`` (trad. : effacer le journal de données).
 
 Appuie sur le ``||datalogger: +||`` pour afficher plus d'options.
 
