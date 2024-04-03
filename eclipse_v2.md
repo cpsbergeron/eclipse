@@ -12,7 +12,7 @@ Supprime les blocs ``||basic:toujours||`` et ``||basic:au démarrage||``.
 
 ```package
 
-datalogger=github:microsoft/pxt-microbit
+datalogger
 
 ```
 
@@ -180,7 +180,7 @@ input.onButtonPressed(Button.AB, function () {
     basic.pause(1000)
     control.reset()
 })
-loops.everyInterval(1000 * (60 * 5), function () {
+loops.everyInterval(1000 * (60 * 2), function () {
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
     datalogger.createCV("L", input.lightLevel())
@@ -191,5 +191,5 @@ loops.everyInterval(1000 * (60 * 5), function () {
 
 ## Étape 13
 
-Télécharge teste la la programmation avec le micro:bit.
+Télécharge et teste la la programmation avec le micro:bit.
 
