@@ -6,7 +6,7 @@ Programme le micro:bit pour qu'il recueille des données pendant l'éclipse sola
 
 ## Étape 1
 
-Supprime le bloc ``||basic:toujours||``.
+Supprime le bloc ``||basic:au démarrage||``.
 
 ## Étape 2
 
