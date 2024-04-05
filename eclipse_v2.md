@@ -6,7 +6,7 @@ Programme le micro:bit pour qu'il recueille des données pendant l'éclipse sola
 
 ## Étape 1
 
-Supprime les blocs ``||basic:toujours||`` et ``||basic:au démarrage||``.
+Supprime le bloc ``||basic:toujours||``.
 
 ## Étape 2
 
@@ -16,18 +16,33 @@ datalogger
 
 ```
 
-Glisse le bloc ``||loops: chaque 500 (ms)||`` dans la zone de programme.
+Ajoute le bloc ``||basic: effacer écran||`` dans le bloc ``||basic:toujours||``.
 
-Remplace la valeur ``||loops: 500||`` par le bloc ``||math: 0   x   0||``.
+Ajoute le bloc ``||basic: pause (ms)||`` sous le bloc ``||basic: effacer écran||``.
 
 ```blocks
 
-loops.everyInterval(0 * 0, function () {
-    })
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(100)
+})
 
 ```
 
 ## Étape 3
+
+Remplace la valeur ``||basic: 100||`` par le bloc ``||math: 0   x   0||``.
+
+```blocks
+
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(0 * 0)
+})
+
+```
+
+## Étape 4
 
 Modifie le bloc ``||math: 0  x  0||``.
 
@@ -37,21 +52,24 @@ Remplace la valeur ``||math: 0||`` de droite par le bloc ``||math: 5||``.
 
 ```blocks
 
-loops.everyInterval(1000 * 5, function () {
-
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
 })
 
 ```
 
-## Étape 4
+## Étape 5
 
-Ajoute le bloc ``||datalogger: log data||`` (trad. : enregistrer des données) dans le bloc ``||loops: chaque (ms)||``.
+Ajoute le bloc ``||datalogger: log data||`` (trad. : enregistrer des données) sous le bloc ``||basic: pause (ms)||``.
 
 Appuie sur ``||datalogger: +||`` pour ajouter une 2e colonne.
 
 ```blocks
 
-loops.everyInterval(1000 * 5, function () {
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("", 0),
     datalogger.createCV("", 0)
@@ -60,13 +78,15 @@ loops.everyInterval(1000 * 5, function () {
 
 ```
 
-## Étape 5
+## Étape 6
 
 Renomme les 2 colonnes du tableau par les valeurs ``||datalogger: T||`` (pour Celsius) et ``||datalogger: L||`` (pour luminosité).
 
 ```blocks
 
-loops.everyInterval(1000 * 5, function () {
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("T", 0),
     datalogger.createCV("L", 0)
@@ -75,7 +95,7 @@ loops.everyInterval(1000 * 5, function () {
 
 ```
 
-## Étape 6
+## Étape 7
 
 Remplace la valeur ``||datalogger: 0||`` de la colonne ``||datalogger: T||`` par le bloc ``||input: température||``.
 
@@ -83,7 +103,9 @@ Remplace la valeur ``||datalogger: 0||`` de la colonne ``||datalogger: L||`` par
 
 ```blocks
 
-loops.everyInterval(1000 * 5, function () {
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
     datalogger.createCV("L", input.lightLevel())
@@ -91,7 +113,7 @@ loops.everyInterval(1000 * 5, function () {
 })
 
 ```
-## Étape 7
+## Étape 8
 
 Ajoute le bloc ``||basic: montrer l'icône||`` sous le bloc ``||datalogger: log data||`` (trad. : enregistrer des données).
 
@@ -99,7 +121,9 @@ Sélectionne le ``||basic: le crochet||`` comme icône.
 
 ```blocks
 
-loops.everyInterval(1000 * 5, function () {
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
     datalogger.createCV("L", input.lightLevel())
@@ -108,7 +132,7 @@ loops.everyInterval(1000 * 5, function () {
 })
 ```
 
-## Étape 8
+## Étape 9
 
 Glisse le bloc ``||input: lorsque le bouton A+B est pressé)||`` dans la zone de programme.
 
@@ -122,7 +146,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 9
+## Étape 10
 
 Modifie le bloc ``||datalogger: delete log||`` (trad. : effacer le journal de données).
 
@@ -138,7 +162,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 10
+## Étape 11
 
 Ajoute le bloc ``||basic: pause (ms)||`` sous le bloc  ``||datalogger: delete log||`` (trad. : effacer les données).
 
@@ -153,7 +177,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 11
+## Étape 12
 
 Ajoute le bloc ``||control: remise à zero||`` sous le bloc  ``||basic: pause (ms)||``.
 
@@ -163,25 +187,6 @@ input.onButtonPressed(Button.AB, function () {
     datalogger.deleteLog(datalogger.DeleteType.Full)
     basic.pause(1000)
     control.reset()
-})
-
-```
-
-## Étape 12
-
-Ajoute les blocs ``||basic: montrer l'icône||`` sous le bloc ``||control: remise à zero||`` pour créer une courte animation.
-
-Regarde l'indice au besoin.
-
-```blocks
-
-input.onButtonPressed(Button.AB, function () {
-    datalogger.deleteLog(datalogger.DeleteType.Full)
-    basic.pause(1000)
-    control.reset()
-    basic.showIcon(IconNames.Chessboard)
-    basic.showIcon(IconNames.Diamond)
-    basic.showIcon(IconNames.SmallDiamond)
 })
 
 ```
@@ -257,20 +262,20 @@ input.onButtonPressed(Button.AB, function () {
     datalogger.deleteLog(datalogger.DeleteType.Full)
     basic.pause(1000)
     control.reset()
-    basic.showIcon(IconNames.Chessboard)
-    basic.showIcon(IconNames.Diamond)
-    basic.showIcon(IconNames.SmallDiamond)
 })
 input.onButtonPressed(Button.B, function () {
     basic.showNumber(input.lightLevel() * (100 / 255))
 })
-loops.everyInterval(1000 * 5, function () {
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
     datalogger.createCV("L", input.lightLevel())
     )
     basic.showIcon(IconNames.Yes)
 })
+
 
 ```
 
