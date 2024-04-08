@@ -99,7 +99,7 @@ basic.forever(function () {
 
 Remplace la valeur ``||datalogger: 0||`` de la colonne ``||datalogger: T||`` par le bloc ``||input: température||``.
 
-Remplace la valeur ``||datalogger: 0||`` de la colonne ``||datalogger: L||`` par le bloc ``||input: niveau d'intensité lumineuse||``.
+Remplace la valeur ``||datalogger: 0||`` de la colonne ``||datalogger: L||`` par le bloc ``||math: 0  x  0||``.
 
 ```blocks
 
@@ -108,12 +108,53 @@ basic.forever(function () {
     basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
-    datalogger.createCV("L", input.lightLevel())
+    datalogger.createCV("L", 0 * 0)
     )
 })
 
 ```
+
 ## Étape 8
+
+Remplace la valeur ``||math: 0 ||`` de droite du bloc ``||math: 0  x  0||`` par le bloc ``||math: 0  /  0||``.
+
+```blocks
+
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
+    datalogger.log(
+    datalogger.createCV("T", input.temperature()),
+    datalogger.createCV("L", 0 * (0 / 0))
+    )
+})
+
+```
+
+## Étape 9
+
+Modifie les valeurs.
+
+Remplace la valeur ``||math: 0||`` de gauche par le bloc ``||input: niveau d'intensité lumineuse||``.
+
+Remplace la valeur ``||math: 0||`` du centre par la valeur 100. 
+
+Remplace la valeur ``||math: 0||`` de droite par la valeur 255.
+
+```blocks
+
+basic.forever(function () {
+    basic.clearScreen()
+    basic.pause(1000 * 5)
+    datalogger.log(
+    datalogger.createCV("T", input.temperature()),
+    datalogger.createCV("L", input.lightLevel() * (100 / 255))
+    )
+})
+
+```
+
+## Étape 10
 
 Ajoute le bloc ``||basic: montrer l'icône||`` sous le bloc ``||datalogger: log data||`` (trad. : enregistrer des données).
 
@@ -126,13 +167,14 @@ basic.forever(function () {
     basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
-    datalogger.createCV("L", input.lightLevel())
+    datalogger.createCV("L", input.lightLevel() * (100 / 255))
     )
     basic.showIcon(IconNames.Yes)
 })
+
 ```
 
-## Étape 9
+## Étape 11
 
 Glisse le bloc ``||input: lorsque le bouton A+B est pressé)||`` dans la zone de programme.
 
@@ -146,7 +188,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 10
+## Étape 12
 
 Modifie le bloc ``||datalogger: delete log||`` (trad. : effacer le journal de données).
 
@@ -162,7 +204,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 11
+## Étape 13
 
 Ajoute le bloc ``||basic: pause (ms)||`` sous le bloc  ``||datalogger: delete log||`` (trad. : effacer les données).
 
@@ -177,7 +219,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 12
+## Étape 14
 
 Ajoute le bloc ``||control: remise à zero||`` sous le bloc  ``||basic: pause (ms)||``.
 
@@ -191,7 +233,7 @@ input.onButtonPressed(Button.AB, function () {
 
 ```
 
-## Étape 13
+## Étape 15
 
 Ajoute le bloc ``||basic: montrer nombre||`` dans le bloc ``||input: lorsque le bouton A est pressé||``.
 
@@ -205,7 +247,7 @@ input.onButtonPressed(Button.A, function () {
 
 ```
 
-## Étape 14
+## Étape 16
 
 Ajoute le bloc ``||basic: montrer nombre||`` dans le bloc ``||input: lorsque le bouton B est pressé||``.
 
@@ -219,7 +261,7 @@ input.onButtonPressed(Button.B, function () {
 
 ```
 
-## Étape 15
+## Étape 17
 
 Remplace la valeur ``||math: 0||`` de droite par le bloc ``||math: 0  /  0||``.
 
@@ -231,7 +273,7 @@ input.onButtonPressed(Button.B, function () {
 
 ```
 
-## Étape 16
+## Étape 18
 
 Modifie les valeurs dans le bloc ``||basic: montrer nombre||``.
 
@@ -247,7 +289,7 @@ input.onButtonPressed(Button.B, function () {
 
 ```
 
-## Étape 17
+## Étape 19
 
 Voici la programmation complète du tutoriel.
 
@@ -271,7 +313,7 @@ basic.forever(function () {
     basic.pause(1000 * 5)
     datalogger.log(
     datalogger.createCV("T", input.temperature()),
-    datalogger.createCV("L", input.lightLevel())
+    datalogger.createCV("L", input.lightLevel() * (100 / 255))
     )
     basic.showIcon(IconNames.Yes)
 })
