@@ -31,7 +31,7 @@ basic.forever(function () {
 
 ## Étape 3
 
-Remplace la valeur ``||basic: 100||`` par le bloc ``||math: 0  x  0||``.
+Remplace la valeur ``||basic: 100||`` du bloc ``||basic: pause (ms)||`` par le bloc ``||math: 0  x  0||``.
 
 ```blocks
 
@@ -263,7 +263,7 @@ input.onButtonPressed(Button.B, function () {
 
 ## Étape 17
 
-Remplace la valeur ``||math: 0||`` de droite par le bloc ``||math: 0  /  0||``.
+Remplace la valeur ``||math: 0||`` de droite du bloc ``||math: 0  x  0||`` par le bloc ``||math: 0  /  0||``.
 
 ```blocks
 
@@ -278,7 +278,9 @@ input.onButtonPressed(Button.B, function () {
 Modifie les valeurs dans le bloc ``||basic: montrer nombre||``.
 
 Remplace la valeur ``||math: 0||`` de gauche par le bloc ``||input: niveau d'intensité lumineuse||``.
+
 Remplace la valeur ``||math: 0||`` du centre par la valeur 100. 
+
 Remplace la valeur ``||math: 0||`` de droite par la valeur 255.
 
 ```blocks
