@@ -31,7 +31,7 @@ basic.forever(function () {
 
 ## Étape 3
 
-Remplace la valeur ``||basic: 100||`` par le bloc ``||math: 0   x   0||``.
+Remplace la valeur ``||basic: 100||`` par le bloc ``||math: 0  x  0||``.
 
 ```blocks
 
